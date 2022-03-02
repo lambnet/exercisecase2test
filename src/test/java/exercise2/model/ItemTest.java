@@ -22,7 +22,13 @@ class ItemTest {
     void getStock() {
         Main.buyItem(new Date(),tas,5, soldItem, invoices);
         Main.buyItem(new Date(),tas,5, soldItem, invoices);
-        Assertions.assertEquals(0, tas.getStock());
+        Main.buyItem(new Date(),tas,5, soldItem, invoices);
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(0, tas.getStock()), // stock item tas habis
+                ()-> tas.setStock(10), // tambah stock item tas
+                () -> Assertions.assertEquals(10,tas.getStock()));
     }
+
+
 
 }
