@@ -16,7 +16,6 @@ public class MainTest {
         Item tas = new Item("tas", 200, 10);
         List<Invoice> invoices = new ArrayList<>();
         HashMap<Item, Integer> soldItem = new HashMap<>();
-        Main.buyItem(new Date(), tas, 5, soldItem, invoices);
 
         // Sold item qty fot 'tas' should be 5
         Main.buyItem(new Date(), tas, 5, soldItem, invoices);
